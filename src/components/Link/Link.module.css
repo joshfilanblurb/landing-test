@@ -1,0 +1,31 @@
+@layer codex.components {
+  .link {
+    line-height: var(--codex-font-line-height-normal);
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--codex-color-semantic-bg-primary);
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      color: var(--codex-color-semantic-bg-primary-hover);
+    }
+
+    &:active {
+      color: var(--codex-color-semantic-bg-primary-active);
+    }
+  }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .icon svg {
+    width: 1em;
+    height: 1em;
+  }
+}

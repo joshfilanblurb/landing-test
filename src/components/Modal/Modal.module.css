@@ -1,0 +1,52 @@
+@layer codex.components {
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+  }
+
+  .backdrop[data-ending-style] {
+    opacity: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--codex-spacing-2);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--codex-color-semantic-bg-surface-overlay);
+    border-radius: var(--codex-radius-sm);
+    box-shadow: var(--codex-shadow-overlay);
+    padding: var(--codex-spacing-6);
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+    z-index: 9999;
+  }
+
+  .content[data-size="small"] {
+    width: 350px;
+    padding: var(--codex-spacing-4);
+  }
+
+  .content[data-size="large"] {
+    width: 500px;
+    padding: var(--codex-spacing-6);
+  }
+  .content[data-ending-style] {
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0;
+  }
+
+  .title {
+    font-size: var(--codex-font-size-xl);
+    font-weight: var(--codex-font-weight-semibold);
+    line-height: var(--codex-font-line-height-tight);
+    color: var(--codex-color-semantic-text-bold);
+    margin: var(--codex-spacing-0);
+  }
+}

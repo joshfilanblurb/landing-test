@@ -1,0 +1,98 @@
+@layer codex.components {
+  .positioner {
+    z-index: 9999;
+  }
+
+  .popup {
+    background-color: var(--codex-color-semantic-bg-gray-bold);
+    color: var(--codex-color-semantic-text-inverse);
+    font-family: var(--codex-font-family-sans);
+    font-size: var(--codex-font-size-sm);
+    font-weight: var(--codex-font-weight-normal);
+    line-height: var(--codex-font-line-height-normal);
+    word-wrap: break-word;
+    white-space: normal;
+    transition:
+      opacity 150ms ease-out,
+      transform 150ms ease-out;
+  }
+
+  /* Large size (default) */
+  .popup[data-size="large"] {
+    max-width: 300px;
+    padding: var(--codex-spacing-4);
+    border-radius: var(--codex-radius-md);
+    box-shadow: var(--codex-shadow-raised);
+  }
+
+  /* Small size */
+  .popup[data-size="small"] {
+    padding: var(--codex-spacing-1) var(--codex-spacing-2);
+    border-radius: var(--codex-radius-sm);
+  }
+
+  .popup[data-starting-style],
+  .popup[data-ending-style] {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  /* Skip animation when moving between tooltips with TooltipProvider */
+  .popup[data-instant] {
+    transition-duration: 0s;
+  }
+
+  .arrow {
+    color: var(--codex-color-semantic-bg-gray-bold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Rotation based on side */
+  .arrow[data-side="top"] {
+    transform: rotate(180deg);
+  }
+
+  .arrow[data-side="left"] {
+    transform: rotate(90deg);
+  }
+
+  .arrow[data-side="right"] {
+    transform: rotate(-90deg);
+  }
+
+  /* Large arrow positioning (16x11) */
+  .arrow[data-size="large"][data-side="bottom"] {
+    top: -10px;
+  }
+
+  .arrow[data-size="large"][data-side="top"] {
+    bottom: -10px;
+  }
+
+  .arrow[data-size="large"][data-side="left"] {
+    right: -12px;
+  }
+
+  .arrow[data-size="large"][data-side="right"] {
+    left: -12px;
+  }
+
+  /* Small arrow positioning (8x6) */
+  .arrow[data-size="small"][data-side="bottom"] {
+    top: -5px;
+  }
+
+  .arrow[data-size="small"][data-side="top"] {
+    bottom: -5px;
+  }
+
+  .arrow[data-size="small"][data-side="left"] {
+    right: -6px;
+  }
+
+  .arrow[data-size="small"][data-side="right"] {
+    left: -6px;
+  }
+}

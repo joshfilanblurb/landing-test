@@ -1,0 +1,105 @@
+@layer codex.components {
+  .item {
+    position: relative;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: var(--codex-spacing-2);
+    cursor: pointer;
+    font-family: var(--codex-font-family-sans);
+    font-size: var(--codex-font-size-base);
+    line-height: var(--codex-font-line-height-normal);
+    color: var(--codex-color-semantic-text-bold);
+  }
+
+  .item:has(.input:disabled) {
+    cursor: not-allowed;
+    color: var(--codex-color-semantic-text-disabled);
+  }
+
+  .input {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .radio {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 2px solid currentcolor;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--codex-color-semantic-icon-subtle);
+    flex-shrink: 0;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease,
+      outline-color 0.15s ease;
+  }
+
+  .radio::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: currentcolor;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .input:checked + .radio {
+    color: var(--codex-color-semantic-icon-primary);
+  }
+
+  .input:checked + .radio::after {
+    opacity: 1;
+  }
+
+  .item:hover:not(:has(.input:disabled)) .radio {
+    color: var(--codex-color-semantic-icon-subtle-hover);
+  }
+
+  .item:hover:not(:has(.input:disabled)) .input:checked + .radio {
+    color: var(--codex-color-semantic-icon-link-hover);
+  }
+
+  .input:focus-visible + .radio {
+    outline: 2px solid var(--codex-color-semantic-border-focus);
+    outline-offset: 2px;
+  }
+
+  .input:disabled + .radio {
+    color: var(--codex-color-semantic-icon-disabled);
+  }
+
+  .label {
+    display: inline-block;
+    font-weight: var(--codex-font-weight-normal);
+  }
+
+  /**
+   * Maintains label at a width matching the bold text content so that
+   * the container size does not adjust when items of different lengths
+   * are selected
+   */
+  .label[data-label]::after {
+    content: attr(data-label);
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    font-weight: var(--codex-font-weight-bold);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .item:has(.input:checked) .label {
+    font-weight: var(--codex-font-weight-bold);
+  }
+}

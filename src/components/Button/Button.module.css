@@ -1,0 +1,149 @@
+@layer codex.components {
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    white-space: nowrap;
+    gap: var(--codex-spacing-2);
+    padding-block: var(--codex-spacing-2);
+    font-weight: var(--codex-font-weight-semibold);
+    line-height: var(--codex-font-line-height-normal);
+    border-radius: var(--codex-radius-sm);
+    border: 1px solid;
+    border-color: var(--border-color);
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    background-color: var(--background-color);
+    color: var(--color);
+
+    &:focus-visible {
+      outline: 2px solid var(--codex-color-semantic-border-focus);
+    }
+
+    &:hover:not(:disabled) {
+      background-color: var(--background-color-hover);
+      color: var(--color-hover);
+      border-color: var(--border-color-hover);
+    }
+
+    &:active:not(:disabled),
+    &:focus-visible {
+      background-color: var(--background-color-active);
+      color: var(--color-active);
+      border-color: var(--border-color-active);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      background-color: var(--codex-color-semantic-bg-neutral-disabled);
+      color: var(--codex-color-semantic-text-disabled);
+      border-color: var(--border-color-disabled);
+    }
+  }
+
+  .filled {
+    --background-color: var(--intent-color);
+    --background-color-hover: var(--intent-color-hover);
+    --background-color-active: var(--intent-color-active);
+    --color: var(--codex-color-semantic-text-inverse);
+    --color-hover: var(--codex-color-semantic-text-inverse);
+    --color-active: var(--codex-color-semantic-text-inverse);
+    --border-color: transparent;
+    --border-color-hover: transparent;
+    --border-color-active: transparent;
+    --border-color-disabled: transparent;
+  }
+
+  .outlined {
+    --background-color: var(--codex-color-semantic-bg-neutral);
+    --background-color-hover: var(--codex-color-semantic-bg-neutral-hover);
+    --background-color-active: var(--codex-color-semantic-bg-neutral-active);
+    --color: var(--intent-color);
+    --color-hover: var(--intent-color-hover);
+    --color-active: var(--intent-color-active);
+    --border-color: var(--intent-color);
+    --border-color-hover: var(--intent-color-hover);
+    --border-color-active: var(--intent-color-active);
+    --border-color-disabled: var(--codex-color-semantic-border-faint);
+  }
+
+  .text {
+    --background-color: transparent;
+    --background-color-hover: transparent;
+    --background-color-active: transparent;
+    --color: var(--intent-color);
+    --color-hover: var(--intent-color-hover);
+    --color-active: var(--intent-color-active);
+    --border-color: transparent;
+    --border-color-hover: transparent;
+    --border-color-active: transparent;
+    --border-color-disabled: transparent;
+    text-decoration: underline;
+
+    &:disabled {
+      background-color: transparent;
+      color: var(--codex-color-semantic-text-disabled);
+      border-color: transparent;
+    }
+  }
+
+  .primary {
+    --intent-color: var(--codex-color-semantic-bg-primary);
+    --intent-color-hover: var(--codex-color-semantic-bg-primary-hover);
+    --intent-color-active: var(--codex-color-semantic-bg-primary-active);
+  }
+
+  .neutral {
+    --intent-color: var(--codex-color-semantic-bg-gray-bold);
+    --intent-color-hover: var(--codex-color-semantic-bg-gray-bold-hover);
+    --intent-color-active: var(--codex-color-semantic-bg-gray-bold-active);
+  }
+
+  .danger {
+    --intent-color: var(--codex-color-semantic-bg-danger);
+    --intent-color-hover: var(--codex-color-semantic-bg-danger-hover);
+    --intent-color-active: var(--codex-color-semantic-bg-danger-active);
+  }
+
+  .fullWidth {
+    width: 100%;
+    display: flex;
+  }
+
+  .small {
+    padding-inline: var(--codex-spacing-4);
+    font-size: var(--codex-font-size-sm);
+  }
+
+  .large {
+    padding-inline: var(--codex-spacing-6);
+    font-size: var(--codex-font-size-base);
+  }
+
+  .spinner {
+    margin-right: var(--codex-spacing-2);
+    height: 1rem;
+    width: 1rem;
+    animation: spin 1s linear infinite;
+  }
+
+  .spinnerCircle {
+    opacity: 0.25;
+  }
+
+  .spinnerPath {
+    opacity: 0.75;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

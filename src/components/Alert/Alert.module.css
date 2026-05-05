@@ -1,0 +1,34 @@
+@layer codex.components {
+  .alert {
+    border-radius: var(--codex-radius-sm);
+    display: flex;
+  }
+
+  .alert[data-size="small"] {
+    width: 350px;
+    height: 40px;
+    align-items: center;
+    padding: 0 var(--codex-spacing-2);
+  }
+
+  .alert[data-size="large"] {
+    width: 100%;
+    padding: var(--codex-spacing-4);
+  }
+
+  .alert[data-type="info"] {
+    background-color: var(--codex-color-semantic-bg-info-subtlest);
+  }
+
+  .alert[data-type="success"] {
+    background-color: var(--codex-color-semantic-bg-success-subtlest);
+  }
+
+  .alert[data-type="warning"] {
+    background-color: var(--codex-color-semantic-bg-warning-subtlest);
+  }
+
+  .alert[data-type="error"] {
+    background-color: var(--codex-color-semantic-bg-danger-subtlest);
+  }
+}

@@ -1,0 +1,61 @@
+@layer codex.reset {
+  /*
+   * Minimal defensive reset for component library
+   * Philosophy: Reset only what commonly causes issues, not everything
+   * Based on modern CSS reset best practices (Josh Comeau, 2024)
+   */
+
+  [data-codex-component] {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: var(--codex-font-family-sans);
+    font-size: var(--codex-font-size-base);
+    line-height: var(--codex-font-line-height-normal);
+    font-weight: var(--codex-font-weight-normal);
+    text-align: start;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    white-space: normal;
+    color: var(--codex-color-semantic-text-bold);
+    background: none;
+    border: none;
+  }
+
+  [data-codex-component] *,
+  [data-codex-component] *::before,
+  [data-codex-component] *::after {
+    box-sizing: border-box;
+  }
+
+  [data-codex-component="button"] {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  [data-codex-component="input"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Remove iOS input shadows */
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  [data-codex-component="modal"],
+  [data-codex-component="modal-overlay"] {
+    z-index: 9999;
+  }
+
+  [data-codex-component] p,
+  [data-codex-component] h1,
+  [data-codex-component] h2,
+  [data-codex-component] h3 {
+    margin: 0;
+  }
+}

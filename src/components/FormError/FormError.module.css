@@ -1,0 +1,25 @@
+@layer codex.components {
+  .error {
+    display: inline-flex;
+    flex: 1 0 0;
+    gap: var(--codex-spacing-1);
+    padding: var(--codex-spacing-1);
+
+    font-family: var(--codex-font-family-sans);
+    font-weight: var(--codex-font-weight-normal);
+    font-size: var(--codex-font-size-sm);
+    line-height: var(--codex-font-line-height-snug);
+
+    color: var(--codex-color-semantic-text-bold);
+    background: var(--codex-color-semantic-bg-danger-subtlest);
+
+    border-radius: var(--codex-radius-sm);
+  }
+
+  .icon {
+    color: var(--codex-color-semantic-icon-danger);
+    > svg {
+      vertical-align: text-bottom;
+    }
+  }
+}

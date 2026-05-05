@@ -1,0 +1,41 @@
+@layer codex.components {
+  .card {
+    display: block;
+    position: relative;
+    padding: var(--codex-spacing-3);
+    border: 1px solid var(--codex-color-semantic-border-subtle);
+    border-radius: var(--codex-radius-sm);
+    background-color: var(--codex-color-semantic-bg-neutral);
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font: inherit;
+    color: inherit;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--codex-radius-sm);
+      pointer-events: none;
+    }
+
+    &:hover:not(:disabled):not([data-disabled]) {
+      border-color: var(--codex-color-semantic-border-link-hover);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--codex-color-semantic-border-focus);
+    }
+
+    &[data-checked]::before {
+      border: 2px solid var(--codex-color-semantic-border-link-active);
+    }
+
+    &:disabled,
+    &[data-disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}
