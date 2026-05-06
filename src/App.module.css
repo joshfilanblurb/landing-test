@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--codex-color-semantic-bg-surface-sunken);
+  background-color: var(--codex-color-primitive-light-charcoal-50);
   padding: var(--codex-spacing-6);
   box-sizing: border-box;
 }
@@ -14,20 +14,40 @@
   background-color: var(--codex-color-semantic-bg-surface);
   border-radius: var(--codex-radius-md);
   box-shadow: var(--codex-shadow-raised);
-  padding: var(--codex-spacing-8);
+  padding: var(--codex-spacing-10) var(--codex-spacing-8);
   display: flex;
   flex-direction: column;
-  gap: var(--codex-spacing-6);
+  gap: var(--codex-spacing-8);
+}
+
+/* ── Header ── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--codex-spacing-1);
 }
 
 .title {
   margin: 0;
   font-family: var(--codex-font-family-heading);
-  font-size: var(--codex-font-size-3xl);
+  font-size: var(--codex-font-size-4xl);
   font-weight: var(--codex-font-weight-semibold);
   color: var(--codex-color-semantic-text-bold);
   line-height: var(--codex-font-line-height-tight);
+  letter-spacing: -0.02em;
 }
+
+.subtitle {
+  margin: 0;
+  font-family: var(--codex-font-family-sans);
+  font-size: var(--codex-font-size-sm);
+  font-weight: var(--codex-font-weight-normal);
+  color: var(--codex-color-semantic-text-subtle);
+  line-height: var(--codex-font-line-height-normal);
+}
+
+/* ── Form ── */
 
 .form {
   display: flex;
@@ -35,11 +55,31 @@
   gap: var(--codex-spacing-4);
 }
 
+.formError {
+  font-family: var(--codex-font-family-sans);
+  font-size: var(--codex-font-size-sm);
+  color: var(--codex-color-semantic-text-danger);
+  background-color: var(--codex-color-semantic-bg-danger-subtlest);
+  border: 1px solid var(--codex-color-semantic-border-danger);
+  border-radius: var(--codex-radius-sm);
+  padding: var(--codex-spacing-2) var(--codex-spacing-3);
+  line-height: var(--codex-font-line-height-snug);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--codex-spacing-3);
+  padding-top: var(--codex-spacing-2);
+}
+
 .footer {
   display: flex;
   justify-content: center;
   font-size: var(--codex-font-size-sm);
 }
+
+/* ── Show/hide password button ── */
 
 .iconButton {
   all: unset;
@@ -57,4 +97,55 @@
   &:focus-visible {
     outline: 2px solid var(--codex-color-semantic-border-focus);
   }
+}
+
+/* ── Sign up CTA ── */
+
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--codex-spacing-1);
+  padding-top: var(--codex-spacing-6);
+  border-top: 1px solid var(--codex-color-semantic-border-faint);
+  font-family: var(--codex-font-family-sans);
+  font-size: var(--codex-font-size-sm);
+}
+
+.signupText {
+  color: var(--codex-color-semantic-text-subtle);
+}
+
+/* ── Success state ── */
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--codex-spacing-2);
+  padding: var(--codex-spacing-4) 0;
+  text-align: center;
+}
+
+.successIcon {
+  color: var(--codex-color-semantic-bg-success);
+  display: flex;
+  margin-bottom: var(--codex-spacing-2);
+}
+
+.successTitle {
+  margin: 0;
+  font-family: var(--codex-font-family-heading);
+  font-size: var(--codex-font-size-xl);
+  font-weight: var(--codex-font-weight-semibold);
+  color: var(--codex-color-semantic-text-bold);
+  line-height: var(--codex-font-line-height-tight);
+}
+
+.successText {
+  margin: 0;
+  font-family: var(--codex-font-family-sans);
+  font-size: var(--codex-font-size-sm);
+  color: var(--codex-color-semantic-text-subtle);
+  line-height: var(--codex-font-line-height-normal);
 }

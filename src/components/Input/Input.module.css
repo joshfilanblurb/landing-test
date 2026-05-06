@@ -53,6 +53,14 @@
       &::placeholder {
         color: var(--codex-color-semantic-text-subtle);
       }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px var(--codex-color-semantic-bg-input) inset;
+        -webkit-text-fill-color: var(--codex-color-semantic-text-bold);
+        transition: background-color 5000s ease-in-out 0s;
+      }
     }
   }
 
